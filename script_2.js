@@ -21,23 +21,25 @@ x.addEventListener("click", RespondClick);
 
 function RespondClick(){
     var message = ""
+    var link = ""
     console.log(map.get(results.indexOf(Math.max(...results))))
     var zz = map.get(results.indexOf(Math.max(...results)))
     if (zz == 'happy'){
         message = "happy "
-        message += happy[Math.floor(Math.random() * 2)] 
+        link = happy[Math.floor(Math.random() * 2)] 
     }else if (zz == 'neutral'){
         message = "neutral "
-        message += neutral[Math.floor(Math.random() * 1)]
+        link = neutral[Math.floor(Math.random() * 1)]
     }else if (zz == 'sad'){
         message = "sad "
-        message += sad[Math.floor(Math.random() * 3)]
+        link = sad[Math.floor(Math.random() * 3)]
     }else{
         message = "surprise "
-        message += surprised[Math.floor(Math.random() * 2)]
+        link = surprised[Math.floor(Math.random() * 2)]
     }
 
     document.getElementById("message").innerHTML = message;
+    document.getElementById("myAnchor").href = link; 
 
 }
 
