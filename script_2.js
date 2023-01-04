@@ -11,10 +11,10 @@ let main_model;
 var results;
 const map = new Map();
 
-const happy = ["happy","happy_1","happy_2","happy_3"]
-const sad = ["sad","sad_1","sad_2","sad_3"]
-const surprised = ["surprise","surprise_1","surprise-2","surprise_3"]
-const neutral = ["neutral","neutral_1","neutral_2","neutral_3"]
+const happy = ["https://open.spotify.com/playlist/4nd7oGDNgfM0rv28CQw9WQ","https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC"]
+const sad = ["https://open.spotify.com/album/6PW9LPfKB3uxY2M3XTkY4J","https://open.spotify.com/playlist/07cKOg8bqOupkf5eRFJIY2", "https://open.spotify.com/playlist/65Dd7x3Y2GOsxyIaMOMUzO"]
+const surprised = ["https://open.spotify.com/playlist/7vatYrf39uVaZ8G2cVtEik","https://open.spotify.com/playlist/6e0jWlt1BBF1ZeeMNmXIOz"]
+const neutral = ["https://open.spotify.com/playlist/7AQaGR1roiTHDM2EdnzxJO"]
 
 const x = document.getElementById("click");
 x.addEventListener("click", RespondClick);
@@ -24,13 +24,17 @@ function RespondClick(){
     console.log(map.get(results.indexOf(Math.max(...results))))
     var zz = map.get(results.indexOf(Math.max(...results)))
     if (zz == 'happy'){
-        message = happy[Math.floor(Math.random() * 4)] 
+        message = "happy "
+        message += happy[Math.floor(Math.random() * 2)] 
     }else if (zz == 'neutral'){
-        message = neutral[Math.floor(Math.random() * 4)]
+        message = "neutral "
+        message += neutral[Math.floor(Math.random() * 1)]
     }else if (zz == 'sad'){
-        message = sad[Math.floor(Math.random() * 4)]
+        message = "sad "
+        message += sad[Math.floor(Math.random() * 3)]
     }else{
-        message = surprised[Math.floor(Math.random() * 4)]
+        message = "surprise "
+        message += surprised[Math.floor(Math.random() * 2)]
     }
 
     document.getElementById("message").innerHTML = message;
